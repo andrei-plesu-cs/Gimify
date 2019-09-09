@@ -1,0 +1,58 @@
+
+<div class="second-background"></div>
+<div class="background"></div>
+
+<div class="header">
+  <img src="../../../assets/images/Logo.png" alt="Logo picture">
+</div>
+
+<div class="container">
+  <div class="main-form">
+    <form action="" (ngSubmit)="onLogIn(f)" #f="ngForm">
+      <div>
+        <label for="email"></label>
+        <input 
+          type="email" 
+          class="blue-input"
+          [ngClass]="{'validationError': !f.valid && !f.pristine}"
+          placeholder="Enter email..." 
+          email 
+          required 
+          size="30px" 
+          id="email"
+          ngModel
+          name="email" />
+      </div>
+      <div>
+        <label for="password"></label>
+        <input 
+          type="password" 
+          class="blue-input"
+          [ngClass]="{'validationError': !f.valid && !f.pristine}"
+          placeholder="Enter password..." 
+          required
+          minlength="6"
+          maxlength="12"
+          size="30px" 
+          id="password"
+          ngModel
+          name="password" />
+      </div>
+      <div class="for-button">
+        <button type="submit" class="my-button"
+          [disabled]="!f.valid">Log In</button>
+      </div>
+    </form>
+  </div>
+
+  <p class="sign-up-text">
+    <a routerLink="/sign-up">Click here</a>
+    <span> to sign up if you don't have an account</span>
+  </p>
+</div>
+
+<div class="container login-footer">
+  <p>Or choose one of our providers</p>
+  <button type="button" class="footer-button" (click)="onClickGoogle()">Sign in with Google</button><br />
+  <button type="button" class="footer-button" (click)="onClickFacebook()">Sign in with Facebook</button>
+</div>

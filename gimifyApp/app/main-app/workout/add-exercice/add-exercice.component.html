@@ -1,0 +1,58 @@
+
+<div class="main-body">
+  <input 
+    type="text"
+    placeholder="Search for an exercice..."
+    size="30px"
+    class="form-control"
+    [(ngModel)]="searchItemInput"
+    (input)="myFunc()">
+
+  <div *ngIf="exercices.length <= 0">
+    <p>No exercices to be displayed</p>
+  </div>
+  <div class="elements-area" *ngFor="let exercice of exercices; let i=index">
+    <div class="element">
+      
+      <div (click)="selectItem(i)" class="little-element">
+          <div class="row">
+            <div class="col-xs-4 text-left">
+              {{exercice.name}}
+            </div>
+            <div class="col-xs-4 text-center my-text">
+            </div>
+            <div class="col-xs-4 text-center">
+              {{exercice.timePerRep}} s/rep
+            </div>
+          </div>
+      </div>
+
+      <div class="details" *ngIf="isSelected[i]">
+
+        <div class="inline-form">
+          <input 
+            type="text"
+            placeholder="Reps per set..."
+            size="30px"
+            [(ngModel)]="repsInput"
+            >
+          <button type="button" (click)="addSet()" [disabled]="!repsInput">
+            Add set
+          </button>
+        </div>
+
+        <div class="display-sets" *ngFor="let set of tempItem.sets; let i=index">
+          <p>Set {{ i+1 }}: {{ set }} reps</p>
+        </div>
+
+        <button 
+          type="button" 
+          class="btn btn-sm btn-primary flow-right" 
+          (click)="saveExercice(exercice)" *ngIf="tempItem.sets.length > 0">
+            Save exercice
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

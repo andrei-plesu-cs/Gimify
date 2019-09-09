@@ -1,0 +1,58 @@
+
+<div class="background">
+</div>
+
+<!--
+  Form used to to record data and calculate daily calorie intake
+  based on the input received from the user
+-->
+<div class="main-area container">
+  <div class="header-area">
+    <p>Please fill in the form bellow to have your daily intake calculated</p>
+  </div>
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <input 
+      type="text"
+      placeholder="Enter age..."
+      name="age" 
+      ngModel
+      required />
+    
+    <input 
+      type="text"
+      placeholder="Height(cm)..."
+      name="height" 
+      ngModel
+      required />
+    
+    <input 
+      type="text"
+      placeholder="Weight(kg)..."
+      name="weight" 
+      ngModel
+      required />
+    
+    <p>Sex:</p>
+    <select name="sex" id="sex-id" ngModel required>
+      <option selected value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <br />
+    
+    <p>Level of activity:</p>
+    <select name="activity" id="activity-id" ngModel required>
+      <option value="sedentary">Sedentary</option>
+      <option selected value="active">Active</option>
+      <option value="very_active">Very Active</option>
+    </select>
+    <br />
+    
+    <button
+      type="submit"
+      class="btn btn-lg btn-primary" 
+      [disabled]="!f.valid">
+      Calculate
+    </button>
+  </form>
+
+</div>

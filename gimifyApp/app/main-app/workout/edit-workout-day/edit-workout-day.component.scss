@@ -1,0 +1,221 @@
+
+.redBackground {
+    background-color: lightcoral !important;
+}
+
+.background {
+    background-color: #EDF5E1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -50;
+}
+
+.header-area {
+
+    margin-top: 70px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  
+    .main-area {
+      border: none;
+      border-color: transparent;
+      border-radius: 12px;
+      background-color: #003063;
+  
+      p {
+        text-align: center;
+        color: #EDF5E1 !important;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+  
+    }
+  
+    .under-area {
+  
+      margin-top: 4px;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+  
+      p {
+        text-align: center;
+        color: #003063;
+        font-size: 13px;
+      }
+  
+    }
+    
+}
+
+
+.body-area {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 10px;
+  
+    .meal-elem {
+      margin-top: 20px;
+  
+      .meal-header {
+        .meal-name {
+            color: #003063;
+  
+            h4 {
+                font-family: 'Bungee', cursive;
+                font-weight: bold;
+                display: inline;
+                font-size: 16px;
+            }
+    
+            p {
+                display: inline;
+                font-size: 13px;
+                margin-left: 5px;
+            }
+    
+            .changeButton {
+                display: inline;
+                border: none;
+                box-shadow: none;
+                border-color: transparent;
+                border-radius: 16px;
+                background-color: lighten($color: #003063, $amount: 50%);
+                color: #EDF5E1;
+                padding: 4px 7px;
+            }
+    
+            input {
+                padding: 3px 5px;
+                font-size: 14px;
+                width: 140px;
+                background-color: #6EA6DE;
+                color: white;
+            }
+    
+            ::placeholder {
+                color: white
+            }
+  
+        }
+  
+        .meal-ingredients {
+            width: 100%;
+
+        }
+      }
+    }
+}
+
+.ingredient {
+    padding: 6px;
+    margin-top: 6px;
+    background-color: #707070;
+    color: #EDF5E1;
+
+    img {
+    margin-top: 4px;
+    margin-left: 5px;
+    width: 94px;
+    height: 78px;
+    }
+
+    .name {
+    text-align: center;
+    font-size: 16px;
+    }
+
+    .details {
+    text-align: center;
+    font-size: 13px;
+    }
+
+}
+
+.add-meal-form {
+    margin-top: 40px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  
+    .inline-form {
+  
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+  
+      input {
+        width: 70%;
+        padding: 5px;
+        background-color: none;
+        border: 1px solid lighten($color: #000000, $amount: 40);
+        box-shadow: none;
+      }
+  
+      button {
+        width: 30%;
+        padding: 5px;
+        border: none;
+        box-shadow: none;
+        border-color: transparent;
+        background-color: darken($color: #ff9966, $amount: 40);
+        color: #EDF5E1;
+      }
+  
+    }
+  
+    .newAliment {
+      margin-top: 15px;
+      width: 50%;
+      margin-left: 25%;
+      margin-right: 25%;
+      padding: 4px;
+      color: #EDF5E1;
+      background-color: #6EA6DE;
+      border: none;
+      border-radius: 10px;
+      box-shadow: none;
+      border-color: transparent;
+    }
+
+    .saveGroup {
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 6px;
+        font-weight: bold;
+        color: #003063;
+        background-color: #fff;
+        padding: 4px;
+        border: 1px solid #003063;
+        border-radius: 10px;
+        box-shadow: none;
+    }   
+  
+}
+
+.footer-area {
+
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+  
+    button {
+      margin-top: 5px;
+      text-align: center;
+      background-color: #003063;
+      color: #EDF5E1;
+      font-weight: bold;
+      font-size: 12px;
+      border-radius: 15px;
+      padding: 10px;
+      width: 100%;
+    }
+  
+}

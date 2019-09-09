@@ -1,0 +1,127 @@
+
+<div class="background"></div>
+
+<!-- The spin loader -->
+<app-loading-spinner *ngIf="loadingState"></app-loading-spinner>
+
+<div *ngIf="!loadingState">
+  <div class="header-area">
+    <div class="container">
+      <div class="main-area">
+          <p>{{ inputData.dayName }}</p>
+      </div>
+      <div class="under-area">
+        <p>{{ checkInput() }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main area reserved for the elements -->
+  <div class="body-area">
+    <div class="container">
+      <div *ngFor="let meal of meals; let i=index" class="meal-elem">
+        <div class="meal-header">
+          <div class="meal-name">
+            <h4 *ngIf="!isChangeMeal[i]" style="display: inline; margin-right: 15px">{{ meal.mealName }}</h4>
+            <input type="text" placeholder="Meal name..." size=20px *ngIf="isChangeMeal[i]" [value]="meal.mealName" 
+              [(ngModel)]="meal.mealName"/>
+            <p *ngIf="!isChangeMeal[i]">{{ meal.calories }} cal</p>
+            <button type="button" class="changeButton pull-right" *ngIf="!isChangeMeal[i]"
+              (click)="modifyMeal(i)">Change</button>
+            <span class="other-buttons pull-right" *ngIf="isChangeMeal[i]">
+                <button type="button" class="btn btn-info btn-sm"
+                  (click)="saveChanges(meal)">Save</button>
+            </span>
+          </div>
+          
+          <div class="meal-ingredients" 
+            *ngFor="let ingredient of meal.aliments; let j=index">
+            <div 
+              class="ingredient" 
+              [ngClass]="{'redBackground': isChangeMeal[i]}" 
+              (click)="deleteAliment(ingredient, meal, i)">
+              <div class="row">
+                <div class="col-xs-4">
+                  <img [src]="ingredient.imageUrl" alt="Ingredient image" />
+                </div>
+                <div class="col-xs-8">  
+                  <p class="name">{{ ingredient.name }}</p>
+                  <div class="details">
+                    <p>{{ ingredient.onePiece }} grams</p>
+                    <p>{{ ingredient.calories }} cal</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showAddMeal" class="add-meal-form">
+    <div class="container">
+      
+      <div class="inline-form">
+        <input 
+          type="text"
+          placeholder="Enter meal name..."
+          size="30px"
+          required
+          [(ngModel)]="addMealInput" />
+        <button
+          type="button"
+          (click)="discardMeal()">Discard</button>
+      </div>
+
+      <div *ngFor="let alim of tempAliments">
+        <div class="ingredient">
+          <div class="row">
+            <div class="col-xs-4">
+              <img [src]="alim.imageUrl" alt="Ingredient image" />
+            </div>
+            <div class="col-xs-8">  
+              <p class="name">{{ alim.name }}</p>
+              <div class="details">
+                <p>{{ alim.onePiece }} grams</p>
+                <p>{{ alim.calories }} cal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="showSearchAliment">
+        <app-add-element (addedAliment)="newAlimentAdded($event)"></app-add-element>
+      </div>
+      <button
+        type="button"
+        class="newAliment"
+        [disabled]="!addMealInput"
+        (click)="addNewAliment()">New aliment</button>
+      <br />
+      <button
+        *ngIf="tempAliments.length > 0"
+        type="button"
+        class="btn btn-sm btn-primary"
+        (click)="saveMeal()"
+        >Save Meal</button>
+    </div>
+  </div>
+
+  <!-- Area for the three buttons from the footer -->
+  <div *ngIf="!showAddMeal" class="footer-area">
+    <div class="container">
+      <button type="button" (click)="addMeal()">Add Meal</button>
+      <br />
+
+      <button type="button" (click)="saveDayPlan()">
+        {{ isModified === false ? 'Back to planing' : 'Save day plan' }}
+      </button>
+      <br >
+
+      <button type="button" (click)="addToSchematic()">Save day plan and add to schematic</button>
+      <br />
+    </div>
+  </div>
+</div>

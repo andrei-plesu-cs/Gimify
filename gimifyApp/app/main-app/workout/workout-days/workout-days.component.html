@@ -1,0 +1,21 @@
+
+<div class="background">
+</div>
+
+<!-- The loading spinner in action right here... -->
+<app-loading-spinner *ngIf="loadingState">
+</app-loading-spinner>
+
+<!-- The main body of the component -->
+<div *ngIf="!loadingState" class="container main-body">
+  <div *ngFor="let day of daysArray; let i=index">
+    <div class="element text-center">
+      <div class="element-interior" (click)="clickElement(day)">
+        <p class="dayName">{{ day.name | titlecase }}</p>
+      </div>
+      <div class="element-footer">
+        <p class="decideText"> {{ decideText(day) }} </p>
+      </div>
+    </div>
+  </div>
+</div>

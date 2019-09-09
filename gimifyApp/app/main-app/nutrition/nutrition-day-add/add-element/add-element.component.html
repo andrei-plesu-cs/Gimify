@@ -1,0 +1,72 @@
+<div class="main-body">
+  <input 
+    type="text" 
+    size="30" 
+    class="form-control" 
+    placeholder="Search item..."
+    [(ngModel)]="searchWord"
+    (input)="myFunc()" />
+
+  <div *ngIf="aliments.length > 0">
+  <div *ngFor="let item of aliments; let i=index" class="body">
+    <div class="element">
+
+      <div (click)="selectItem(i, item)" class="little-element">
+        <div class="row">
+          <div class="col-xs-4 text-left">
+            {{item.name}}
+          </div>
+          <div class="col-xs-4"></div>
+          <div class="col-xs-2 text-center">
+            {{item.calories}}cal
+          </div>
+          <div class="col-xs-2 text-center">
+            {{item.onePiece}}g
+          </div>
+        </div>
+      </div>
+      
+      <div class="details" *ngIf="selectat[i] === true">
+        <div class="row">
+            <div class="col-xs-4" style="text-align: center">
+              Cals
+            </div>
+            <div class="col-xs-8">
+              <input 
+                class="my-input" 
+                type="text"
+                size="30px"
+                [(ngModel)]=selected.calories
+                (input)="makeBalance(true)"
+              >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4" style="text-align: center">
+              Grams
+            </div>
+            <div class="col-xs-8">
+              <input
+              class="my-input" 
+                type="text"
+                size="30px"
+                [(ngModel)]=selected.onePiece
+                (click)="makeBalance(false)"
+              >
+            </div>
+        </div>
+        <button 
+          type="button"
+          class="btn btn-primary btn-sm"
+          (click)="addToMeal()">  
+        Add</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div *ngIf="aliments.length === 0" >
+    <p>No items selected... please search form something</p>
+  </div>
+  
+</div>

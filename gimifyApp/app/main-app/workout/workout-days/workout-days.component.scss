@@ -1,0 +1,72 @@
+
+.background {
+    background-color: #EDF5E1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -50;
+  }
+  
+  .main-body {
+  
+    margin-top: 20px;
+  
+    .element {
+  
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+  
+      .element-interior {
+        
+        background-color: #003063;
+        padding: 4px;
+        text-align: center;
+        border: none;
+        border-color: transparent;
+        border-radius: 15px;
+        height: 35;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-top: 6px;
+  
+        .dayName {
+          margin-top: 1px;
+          width: 100%;
+          text-align: center;
+          font-size: 16px;
+          color: #EDF5E1;
+        }
+  
+      }
+  
+      .element-footer {
+  
+        padding: 5px;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 28px;
+        width: 80%;
+        background-color: #707070;
+        display: flex;
+        align-items: center;
+  
+  
+        .decideText {
+          width: 100%;
+          margin-top: 3px;
+          text-align: center;
+          font-size: 13px;
+          color: #EDF5E1;
+        }
+  
+      }
+  
+    }
+  
+  }

@@ -1,0 +1,72 @@
+
+<div class="background"></div>
+
+<div class="container logo">
+  <p class="logo-writing">Sign Up</p>
+</div>
+
+<div class="container main-area">
+  <p class="information-paragraph">Fill in the boxes bellow to sign up to our app</p>
+
+  <form action="" (ngSubmit)="onSubmit()" #f="ngForm">
+    <input 
+      type="email"
+      [ngClass]="{'redBackground': valError}"
+      class="blue-input"
+      size="30px"
+      placeholder="Enter email..."
+      email
+      required
+      name="email"
+      ngModel />
+    <input 
+      type="password"
+      [ngClass]="{'redBackground': valError}"
+      class="blue-input"
+      size="30px"
+      placeholder="Enter password..."
+      minlength="6"
+      maxlength="12"
+      required
+      name="password"
+      ngModel />
+    <input 
+      type="password"
+      [ngClass]="{'redBackground': valError}"
+      class="blue-input"
+      size="30px"
+      placeholder="Repeat password..."
+      minlength="6"
+      maxlength="12"
+      required
+      name="repeat"
+      ngModel />
+    <input 
+      type="text"
+      [ngClass]="{'redBackground': valError}"
+      class="blue-input"
+      size="30px"
+      placeholder="Enter preffered username..."
+      required
+      name="username"
+      ngModel />
+    
+    <div class="my-checkbox">
+      <input 
+        type="checkbox"
+        name="notification"
+        [ngModel]="false"/>
+      <span>Send notification through mail</span>
+      <br />
+    </div>
+    
+    <div class="for-button">
+      <button type="submit" class="my-button">Sign Up</button>
+    </div>
+    <div class="validationError" *ngIf="valError">
+      Please make sure you fill in all the fields. <br />
+      Also make sure to enter matching passwords.
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,32 @@
+
+.main-body {
+
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+    color: #003063;
+
+    .element {
+        .little-element {
+            padding: 4px;
+            padding-bottom: 1px;
+            border-bottom: 1px solid #003063;
+        }
+
+        .details {
+            padding: 10px;
+            background-color: #6EA6DE;
+            opacity: 0.5;
+            color: #003063;
+    
+            .my-input {
+                width: 100%;
+            }
+
+            button {
+                margin-top: 6px;
+            }
+        }
+    }
+
+}

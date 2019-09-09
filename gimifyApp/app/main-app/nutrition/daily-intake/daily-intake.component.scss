@@ -1,0 +1,70 @@
+
+::placeholder {
+    color: lighten($color: #EDF5E1, $amount: 40%);
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #EDF5E1;
+    z-index: -50;
+}
+
+.main-area {
+
+    margin-top: 40px;
+    text-align: center;
+    color: #003063;
+
+    input {
+        text-align: left;
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+        border-color: transparent;
+        background-color: #6EA6DE;
+        color: #EDF5E1;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    select {
+        text-align: left;
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+        box-shadow: none;
+        border-color: transparent;
+        background-color: #6EA6DE;
+        color: #EDF5E1;
+        width: 80%;
+        margin: 0px auto 5px auto;
+    }
+
+    p {
+
+        text-align: left;
+        width: 80%;
+        margin: 5px auto 3px auto;
+        color: #003063;
+        font-size: 14px;
+        padding-bottom: 0px;
+
+    }
+
+    button {
+        margin-top: 30px;
+        border: none;
+        box-shadow: none;
+        border-color: transparent;
+        color: #EDF5E1;
+        background-color: #003063;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+    }
+
+}

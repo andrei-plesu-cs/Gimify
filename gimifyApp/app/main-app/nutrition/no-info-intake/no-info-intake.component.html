@@ -1,0 +1,27 @@
+
+<div class="background">
+</div>
+
+<!-- The componenent if no daily calorie intake was found -->
+<div class="main-section container" *ngIf="noDataYet">
+  <div class="header-main">
+    <p>There is no data found for your profile in our databases :(</p><br>
+    <p>Please use our daily calorie intake calculator and fill in the data</p>
+    <button
+      type="button"
+      class="btn btn-lg btn-primary"
+      (click)="toCalculator()">To calculator</button>
+  </div>
+</div>
+
+<!-- The component with existing daily calorie intake found -->
+<div class="container main-section" *ngIf="!noDataYet">
+  <div class="header-main">
+    <p>Current daily callorie intake</p>
+    <p class="headline-text">{{ currentUserData.calorieIntake }}</p>
+    <button
+      type="button"
+      class="btn btn-lg btn-primary"
+      (click)="toCalculator()">Modify</button>
+  </div>
+</div>
